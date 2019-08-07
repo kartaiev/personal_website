@@ -1,0 +1,197 @@
+@import 'config';
+@import 'menu';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include background;
+  background: $primary-color;
+  color: $font-color;
+  font-family: 'Segoe UI',
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
+  height: 100%;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.wrapper {
+  height: calc(100% - 60px);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+  margin: 0;
+
+  &.lg-heading {
+    font-size: 6rem;
+
+  }
+
+  &.sm-heading {
+    background: sm-heading-background-color;
+    padding: .2rem 1rem .2rem .29rem;
+  }
+}
+
+a {
+  color: $font-color;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+main {
+  padding: 4rem;
+
+  .icons {
+    margin-top: 1rem;
+
+    a {
+      padding: .4rem;
+
+      &:hover {
+        @include ease-out;
+        color: $secondary-color;
+      }
+    }
+  }
+
+  &.home {
+    overflow: hidden;
+
+    h1 {
+      margin-top: 20vh;
+    }
+  }
+}
+
+.about {
+
+  .lg-heading {
+    font-size: 5rem;
+  }
+
+  .sm-heading {
+    font-size: 1.5rem;
+  }
+
+  .info {
+    display: grid;
+    grid-auto-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+    grid-template-areas: 'family-portrait bio bio'
+      'husband father teacher';
+    margin-top: 30px;
+
+
+    .family-portrait {
+      border: solid 3px $secondary-color;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      grid-area: family-portrait;
+      height: auto;
+      margin: 50px 0;
+      max-width: 100%;
+
+    }
+
+    .bio {
+      font-size: 1.5rem;
+      grid-area: bio;
+      padding-top: 40px;
+
+      .bio-header {
+        color: $secondary-color;
+      }
+    }
+
+    .husband {
+      grid-area: husband;
+
+      .husband-header {
+        color: $secondary-color;
+      }
+    }
+
+    .father {
+      grid-area: father;
+
+      .father-header {
+        color: $secondary-color;
+      }
+    }
+
+    .teacher {
+      grid-area: teacher;
+
+      .teacher-header {
+        color: $secondary-color;
+      }
+    }
+
+    .husband,
+    .father,
+    .teacher {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .content {
+        background: lighten($primary-color, 5);
+        border-bottom: solid 3px $secondary-color;
+        cursor: pointer;
+        padding: 20px;
+        z-index: 1;
+
+        &:hover {
+          box-shadow: 0px 0px 38px 2px rgba(0, 0, 0, 0.75);
+        }
+      }
+
+      #husband-img,
+      #father-img,
+      #teacher-img {
+        max-width: 100%;
+        height: auto;
+
+        &.slidein {
+          transform: translateY(-350px);
+          @include ease-out;
+        }
+
+        &.slideout {
+          @include ease-out;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+footer {
+  align-items: center;
+  background: darken($primary-color, 10);
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  width: 100%;
+}
+
+@import 'mobile';

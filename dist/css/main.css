@@ -1,0 +1,303 @@
+.menu-btn {
+  transition: all .5s ease-out;
+  cursor: pointer;
+  position: absolute;
+  right: 35px;
+  top: 35px;
+  z-index: 3; }
+  .menu-btn .btn-line {
+    transition: all .5s ease-out;
+    background: #f7f7f7;
+    height: 3px;
+    margin: 0 0 5px;
+    width: 28px; }
+  .menu-btn.close {
+    transform: rotate(180deg); }
+    .menu-btn.close .btn-line:nth-child(1) {
+      background: #f7be16;
+      transform: rotate(45deg) translate(5px, 5px); }
+    .menu-btn.close .btn-line:nth-child(2) {
+      opacity: 0; }
+    .menu-btn.close .btn-line:nth-child(3) {
+      background: #f7be16;
+      transform: rotate(-45deg) translate(7px, -6px); }
+
+.menu {
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  width: 100%; }
+  .menu.show {
+    visibility: visible; }
+  .menu-branding, .menu-nav {
+    align-items: center;
+    display: flex;
+    flex-flow: column wrap;
+    float: left;
+    height: 100vh;
+    justify-content: center;
+    overflow: hidden;
+    width: 50%; }
+  .menu-nav {
+    transition: all .5s ease-out;
+    background: rgba(46, 50, 56, 0.9);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transform: translate3d(0, -100%, 0); }
+    .menu-nav.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-branding {
+    transition: all .5s ease-out;
+    background: rgba(57, 62, 70, 0.9);
+    transform: translate3d(0, 100%, 0); }
+    .menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+    .menu-branding .portrait {
+      background: url("../img/portrait-2.jpg");
+      background-size: cover;
+      border: solid 3px #f7be16;
+      border-radius: 50%;
+      height: 250px;
+      width: 250px; }
+  .menu .nav-item {
+    transition: all .5s ease-out;
+    transform: translate3d(600px, 0, 0); }
+    .menu .nav-item.show {
+      transform: translate3d(0, 0, 0); }
+    .menu .nav-item.current > a {
+      color: #f7be16; }
+  .menu .nav-link {
+    transition: all .5s ease-out;
+    color: #f7f7f7;
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 300;
+    padding: 1rem 0;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase; }
+    .menu .nav-link:hover {
+      color: #f7be16; }
+
+.nav-item:nth-child(1) {
+  transition-delay: 0.1s; }
+
+.nav-item:nth-child(2) {
+  transition-delay: 0.2s; }
+
+.nav-item:nth-child(3) {
+  transition-delay: 0.3s; }
+
+.nav-item:nth-child(4) {
+  transition-delay: 0.4s; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  background: #393e46;
+  color: #f7f7f7;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100%;
+  line-height: 1.5;
+  margin: 0; }
+  body.bg-img {
+    background: url("../img/background.jpg");
+    background-attachment: fixed;
+    background-size: cover; }
+    body.bg-img::after {
+      background: rgba(57, 62, 70, 0.9);
+      content: '';
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      z-index: -1; }
+
+.wrapper {
+  height: calc(100% - 60px); }
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+  margin: 0; }
+  h1.lg-heading,
+  h2.lg-heading,
+  h3.lg-heading {
+    font-size: 6rem; }
+  h1.sm-heading,
+  h2.sm-heading,
+  h3.sm-heading {
+    background: sm-heading-background-color;
+    padding: .2rem 1rem .2rem .29rem; }
+
+a {
+  color: #f7f7f7;
+  text-decoration: none; }
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 2; }
+
+.text-secondary {
+  color: #f7be16; }
+
+main {
+  padding: 4rem; }
+  main .icons {
+    margin-top: 1rem; }
+    main .icons a {
+      padding: .4rem; }
+      main .icons a:hover {
+        transition: all .5s ease-out;
+        color: #f7be16; }
+  main.home {
+    overflow: hidden; }
+    main.home h1 {
+      margin-top: 20vh; }
+
+.about .lg-heading {
+  font-size: 5rem; }
+
+.about .sm-heading {
+  font-size: 1.5rem; }
+
+.about .info {
+  display: grid;
+  grid-auto-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  grid-template-areas: 'family-portrait bio bio' 'husband father teacher';
+  margin-top: 30px; }
+  .about .info .family-portrait {
+    border: solid 3px #f7be16;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    grid-area: family-portrait;
+    height: auto;
+    margin: 50px 0;
+    max-width: 100%; }
+  .about .info .bio {
+    font-size: 1.5rem;
+    grid-area: bio;
+    padding-top: 40px; }
+    .about .info .bio .bio-header {
+      color: #f7be16; }
+  .about .info .husband {
+    grid-area: husband; }
+    .about .info .husband .husband-header {
+      color: #f7be16; }
+  .about .info .father {
+    grid-area: father; }
+    .about .info .father .father-header {
+      color: #f7be16; }
+  .about .info .teacher {
+    grid-area: teacher; }
+    .about .info .teacher .teacher-header {
+      color: #f7be16; }
+  .about .info .husband,
+  .about .info .father,
+  .about .info .teacher {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .about .info .husband .content,
+    .about .info .father .content,
+    .about .info .teacher .content {
+      background: #444a54;
+      border-bottom: solid 3px #f7be16;
+      cursor: pointer;
+      padding: 20px;
+      z-index: 1; }
+      .about .info .husband .content:hover,
+      .about .info .father .content:hover,
+      .about .info .teacher .content:hover {
+        box-shadow: 0px 0px 38px 2px rgba(0, 0, 0, 0.75); }
+    .about .info .husband #husband-img,
+    .about .info .husband #father-img,
+    .about .info .husband #teacher-img,
+    .about .info .father #husband-img,
+    .about .info .father #father-img,
+    .about .info .father #teacher-img,
+    .about .info .teacher #husband-img,
+    .about .info .teacher #father-img,
+    .about .info .teacher #teacher-img {
+      max-width: 100%;
+      height: auto; }
+      .about .info .husband #husband-img.slidein,
+      .about .info .husband #father-img.slidein,
+      .about .info .husband #teacher-img.slidein,
+      .about .info .father #husband-img.slidein,
+      .about .info .father #father-img.slidein,
+      .about .info .father #teacher-img.slidein,
+      .about .info .teacher #husband-img.slidein,
+      .about .info .teacher #father-img.slidein,
+      .about .info .teacher #teacher-img.slidein {
+        transform: translateY(-350px);
+        transition: all .5s ease-out; }
+      .about .info .husband #husband-img.slideout,
+      .about .info .husband #father-img.slideout,
+      .about .info .husband #teacher-img.slideout,
+      .about .info .father #husband-img.slideout,
+      .about .info .father #father-img.slideout,
+      .about .info .father #teacher-img.slideout,
+      .about .info .teacher #husband-img.slideout,
+      .about .info .teacher #father-img.slideout,
+      .about .info .teacher #teacher-img.slideout {
+        transition: all .5s ease-out;
+        transform: translateY(0); }
+
+footer {
+  align-items: center;
+  background: #22252a;
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  width: 100%; }
+
+@media screen and (min-width: 1171px) {
+  .wrapper {
+    width: 1200px;
+    margin: auto; }
+  footer {
+    width: 100%; } }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1.2;
+      margin-bottom: 1rem; }
+  .menu {
+    display: flex;
+    flex-direction: column; }
+  .menu-nav,
+  .menu-branding {
+    float: none;
+    min-height: 0;
+    width: 100%; }
+    .menu-nav.show,
+    .menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0); }
+    .menu-nav .nav-link {
+      font-size: 24px; }
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-branding .portrait {
+      height: 120px;
+      width: 120px; } }
+
+@media screen and (max-width: 500px) {
+  main.home h1 {
+    margin-top: 10vh;
+    font-size: 5rem; } }

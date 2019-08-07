@@ -1,0 +1,75 @@
+$primary-color: #393e46;
+$secondary-color: #f7be16;
+$font-color: #f7f7f7;
+$sm-heading-background-color: rgba(lighten($primary-color, 2), .5);
+$show-home-image: true;
+$home-image: url('../img/background.jpg');
+$background-opacity: rgba($primary-color, .9);
+
+@mixin ease-out {
+  transition: all .5s ease-out;
+}
+
+@mixin background {
+  @if $show-home-image {
+    &.bg-img {
+      background: $home-image;
+      background-attachment: fixed;
+      background-size: cover;
+
+      &::after {
+        background: $background-opacity;
+        content: '';
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+      }
+    }
+  }
+}
+
+// set text color
+@function ser-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #393e46;
+  }
+
+  @else {
+    @return #f7f7f7;
+  }
+}
+
+// Media query mixins
+
+@mixin media-sm {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media screen and (min-width: 769px) and (max-width: 990px) {
+    @content;
+  }
+}
+
+@mixin media-xl {
+  @media screen and (min-width: 991px) and (max-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin media-xxl {
+  @media screen and (min-width: 1171px) {
+    @content;
+  }
+}
