@@ -81,7 +81,7 @@
 // smartphones 
 
 @include media-sm {
-  h1 {
+  .lg-heading {
     margin-top: 10vh;
     font-size: 3rem;
   }
