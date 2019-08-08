@@ -45,7 +45,7 @@ $background-opacity: rgba($primary-color, .9);
 // Media query mixins
 
 @mixin media-sm {
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 480px) {
     @content;
   }
 }
