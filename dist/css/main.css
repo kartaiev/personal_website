@@ -229,28 +229,6 @@ main {
     .about .info .teacher #teacher-img {
       max-width: 100%;
       height: auto; }
-      .about .info .husband #husband-img.slidein,
-      .about .info .husband #father-img.slidein,
-      .about .info .husband #teacher-img.slidein,
-      .about .info .father #husband-img.slidein,
-      .about .info .father #father-img.slidein,
-      .about .info .father #teacher-img.slidein,
-      .about .info .teacher #husband-img.slidein,
-      .about .info .teacher #father-img.slidein,
-      .about .info .teacher #teacher-img.slidein {
-        transform: translateY(-350px);
-        transition: all .5s ease-out; }
-      .about .info .husband #husband-img.slideout,
-      .about .info .husband #father-img.slideout,
-      .about .info .husband #teacher-img.slideout,
-      .about .info .father #husband-img.slideout,
-      .about .info .father #father-img.slideout,
-      .about .info .father #teacher-img.slideout,
-      .about .info .teacher #husband-img.slideout,
-      .about .info .teacher #father-img.slideout,
-      .about .info .teacher #teacher-img.slideout {
-        transition: all .5s ease-out;
-        transform: translateY(0); }
 
 footer {
   align-items: center;
@@ -261,9 +239,6 @@ footer {
   width: 100%; }
 
 @media screen and (min-width: 1171px) {
-  .wrapper {
-    width: 1200px;
-    margin: auto; }
   footer {
     width: 100%; } }
 
@@ -295,7 +270,10 @@ footer {
     transform: translate3d(100%, 0, 0); }
     .menu-branding .portrait {
       height: 120px;
-      width: 120px; } }
+      width: 120px; }
+  .about .info {
+    grid-template-areas: 'family-portrait' 'bio' 'husband' 'father' 'teacher';
+    grid-template-columns: 1fr; } }
 
 @media screen and (max-width: 500px) {
   main.home h1 {

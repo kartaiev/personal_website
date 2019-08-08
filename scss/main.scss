@@ -171,15 +171,15 @@ main {
         max-width: 100%;
         height: auto;
 
-        &.slidein {
-          transform: translateY(-350px);
-          @include ease-out;
-        }
+        // &.slidein {
+        //   transform: translateY(-350px);
+        //   @include ease-out;
+        // }
 
-        &.slideout {
-          @include ease-out;
-          transform: translateY(0);
-        }
+        // &.slideout {
+        //   @include ease-out;
+        //   transform: translateY(0);
+        // }
       }
     }
   }

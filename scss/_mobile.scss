@@ -2,8 +2,8 @@
 
 @include media-xxl {
   .wrapper {
-    width: 1200px;
-    margin: auto;
+    // margin: auto;
+    // width: 1200px;
   }
 
   footer {
@@ -62,6 +62,18 @@
     .portrait {
       height: 120px;
       width: 120px;
+    }
+  }
+
+  .about {
+    .info {
+      grid-template-areas:
+        'family-portrait'
+        'bio'
+        'husband'
+        'father'
+        'teacher';
+      grid-template-columns: 1fr;
     }
   }
 }
